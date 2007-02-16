@@ -8,6 +8,7 @@ Group:		Applications
 Source0:	http://www.net-track.ch/opensource/quagga-snmp/%{name}-%{version}.tar.gz
 # Source0-md5:	a5c06a2ef8d164a0a4f04c1e3c7a2516
 URL:		http://www.net-track.ch/opensource/quagga-snmp/
+Patch0:		%{name}-manual.patch
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	rpmbuild(macros) >= 1.228
@@ -34,6 +35,7 @@ użyciu narzędzia takiego jak MRTG.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %{__aclocal}
